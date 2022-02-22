@@ -1,21 +1,19 @@
 package id.ac.ui.cs.advprog.tutorial1.pricing.core;
 
 public class AlphaAsuransi implements Asuransi {
-    
+    private int price;
     public AlphaAsuransi(int price) {
-        // TODO
+        this.price = price;
     }
 
     @Override
     public String getName() {
-        // TODO
-        return "";
+        return "Alpha";
     }
 
     @Override
     public int getPrice() {
-        // TODO
-        return -1;
+        return this.price;
     }
 
 }

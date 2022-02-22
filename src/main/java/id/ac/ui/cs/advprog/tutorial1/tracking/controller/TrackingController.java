@@ -25,6 +25,7 @@ public class TrackingController {
         
         List<RoadUser> ret = trackingService.getRoadUsers();
         model.addAttribute("roadUsers", ret);
+        System.out.println();
 
         return "tracking/home";
     }
@@ -32,19 +33,16 @@ public class TrackingController {
     @RequestMapping(path = "/new-drago-location", method = RequestMethod.POST)
     public String handleNewDrago(Model model, 
                                 @RequestParam(value = "dragoLocation", required = true) String dragoLocation) {
-        
-    
-        // TODO: implement drago location handler
 
+        trackingService.handleNewEventLocation("Drago Monitor", dragoLocation);
         return "redirect:/tracking";
     }
 
     @RequestMapping(path = "/new-sweets-location", method = RequestMethod.POST)
     public String handleNewSweets(Model model, 
                                 @RequestParam(value = "sweetsLocation", required = true) String sweetsLocation) {
-        
-    
-        // TODO: implement sweets location handler
+
+        trackingService.handleNewEventLocation("Sweets Monitor", sweetsLocation);
         return "redirect:/tracking";
     }
 }

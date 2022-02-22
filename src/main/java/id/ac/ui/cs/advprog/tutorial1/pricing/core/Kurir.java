@@ -4,4 +4,5 @@ public interface Kurir {
     
     String getName();
     int calculatePrice(int weight);
+    int getPricePerKilogram();
 }

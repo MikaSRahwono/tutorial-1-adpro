@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.tutorial1.tracking.service;
 
+import id.ac.ui.cs.advprog.tutorial1.tracking.core.EventMonitor;
 import id.ac.ui.cs.advprog.tutorial1.tracking.core.RoadUser;
 import id.ac.ui.cs.advprog.tutorial1.tracking.repository.EventMonitorRepository;
 import id.ac.ui.cs.advprog.tutorial1.tracking.repository.RoadUserRepository;
@@ -26,7 +27,8 @@ public class TrackingServiceImpl implements TrackingService {
 
     @Override
     public void handleNewEventLocation(String eventName, String location) {
-        // TODO Auto-generated method stub
+        EventMonitor eventMonitor = eventMonitorRepository.findByName(eventName);
+        eventMonitor.notifyRoadUsers(location);
         
     }
     

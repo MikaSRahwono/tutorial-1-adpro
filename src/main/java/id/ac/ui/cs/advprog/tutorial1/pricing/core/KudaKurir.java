@@ -1,18 +1,20 @@
 package id.ac.ui.cs.advprog.tutorial1.pricing.core;
 
 public class KudaKurir implements Kurir {
-    
+    private int pricePerKilogram;
     public KudaKurir(int pricePerKilogram) {
-        // TODO
+        this.pricePerKilogram = pricePerKilogram;
     }
 
     public String getName() {
-        // TODO
-        return "";
+        return "Kuda";
+    }
+
+    public int getPricePerKilogram(){
+        return this.pricePerKilogram;
     }
 
     public int calculatePrice(int weight) {
-        // TODO
-        return 0;
+        return this.pricePerKilogram * weight;
     }
 }

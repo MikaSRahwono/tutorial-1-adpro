@@ -77,7 +77,6 @@
             </form>
           </div>
         </div>
-        <!-- TODO: update depending on RoadUser type and Drago's Location -->
         <div>
           <div class="flex flex-col gap-4">
             <div class="bg-white rounded-lg shadow p-6" th:each="roadUser: ${roadUsers}">
@@ -91,9 +90,7 @@
                 Can currently pass
               </div>
               <ol class="list-disc list-inside">
-                <li>Shefburg Path</li>
-                <li>Cardham Morass</li>
-                <li>Vottona Edge</li>
+                <li th:each="route: ${roadUser.getAllowedRoutes()}" th:text="${route}"></li>
               </ol>
             </div>
           </div>
